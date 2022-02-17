@@ -16,8 +16,6 @@ extension Services {
     /// Post
         case .getPost:
             return "/posts"
-        case .getCommentCount(let postId):
-            return "/posts/\(postId)/comments"
         case .detailPost(let postId):
             return "/posts/\(postId)"
         case .getAllCommentPost(let postId):

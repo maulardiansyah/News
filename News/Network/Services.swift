@@ -12,7 +12,6 @@ enum Services {
     
     /// Post
     case getPost
-    case getCommentCount(_ postId: Int)
     case detailPost(_ postId: Int)
     case getAllCommentPost(_ postId: Int)
     
