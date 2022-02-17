@@ -41,11 +41,11 @@ extension UITableView {
     
     /// Set Empty View
     func setEmptyView(img: UIImage?, title: String, desc: String) {
-        let view = BaseBgEmptyView()
+        let view = BaseEmptyView()
         view.sizeToFit()
         view.img.image = img
-        view.judul.text = title
-        view.desc.text = desc
+        view.lblTitle.text = title
+        view.lblDesc.text = desc
         self.backgroundView = view
     }
     

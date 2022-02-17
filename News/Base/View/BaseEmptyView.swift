@@ -21,7 +21,7 @@ class BaseEmptyView: UIView {
     let lblTitle: UILabel = {
         let label = UILabel()
         label.textColor = .darkBlue
-        label.font = FontStyle.body(.medium).font
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.text = "Title"
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -31,7 +31,7 @@ class BaseEmptyView: UIView {
     let lblDesc: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = FontStyle.body(.regular).font
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.text = "Deskripsi"
         label.textAlignment = .center
         label.numberOfLines = 0

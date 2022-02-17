@@ -9,7 +9,7 @@ import UIKit
 
 class BaseVC: UIViewController {
     
-    let : UIRefreshControl = {
+    let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         return refreshControl
