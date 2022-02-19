@@ -6,7 +6,7 @@
 //
 
 struct Post: Codable {
-    let userid, id: Int?
+    let userId, id: Int?
     let title, body: String?
 }
 
