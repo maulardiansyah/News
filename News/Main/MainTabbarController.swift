@@ -18,7 +18,7 @@ class MainTabbarController: UITabBarController {
         
         delegate = self
         tabBar.isTranslucent = false
-        tabBar.barTintColor = .blue
+        tabBar.barTintColor = .white
         
         viewControllers = [
             setTabbarItem(vc: HomeView(), title: "Home", img: .homeIcon, imgSelected: .homeIconSelected),
@@ -38,9 +38,6 @@ class MainTabbarController: UITabBarController {
         nav.tabBarItem.title = title
         nav.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
         nav.tabBarItem.image = img?.withRenderingMode(.alwaysOriginal)
-        if #available(iOS 13.0, *) {
-            nav.tabBarItem.image?.withTintColor(.blue)
-        }
         nav.tabBarItem.selectedImage = imgSelected?.withRenderingMode(.alwaysOriginal)
         
         return nav

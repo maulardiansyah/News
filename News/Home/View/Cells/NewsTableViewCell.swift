@@ -20,10 +20,11 @@ class NewsTableViewCell: UITableViewCell {
     }
 
     /// Set Value
-    func setValue(titlePost: String, descPost: String, commentCount: Int) {
+    func setValue(titlePost: String, descPost: String, commentCount: Int, isHiddenCommentCount: Bool = false) {
         titlePostLabel.text = titlePost
         descPostLabel.text = descPost
         commentCountButton.setTitle("\(commentCount)", for: .normal)
+        commentCountButton.isHidden = isHiddenCommentCount
     }
     
     //MARK: - Configure View

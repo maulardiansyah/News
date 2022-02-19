@@ -27,6 +27,11 @@ class BaseVC: UIViewController {
         setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigation(isHidden: false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         /// remove title on back button
@@ -55,6 +60,10 @@ class BaseVC: UIViewController {
         
         label.attributedText = attributText
         navigationItem.titleView = label
+    }
+    
+    func setNavigation(isHidden: Bool) {
+        navigationController?.setNavigationBarHidden(isHidden, animated: false)
     }
     
     func setNavigation(barTintColor: UIColor = .white, tintColor: UIColor = .darkBlue) {

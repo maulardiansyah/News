@@ -8,7 +8,7 @@
 import UIKit
 import SkeletonView
 
-class ProfileView: UIViewController {
+class ProfileView: BaseVC {
     
     @IBOutlet weak var lblUsernameValue: UILabel!
     @IBOutlet weak var lblNameValue: UILabel!
@@ -22,6 +22,11 @@ class ProfileView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .bgSoftBlue
         populateUser()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigation(isHidden: true)
     }
     
     /// Populate Data

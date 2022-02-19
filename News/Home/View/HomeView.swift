@@ -20,6 +20,11 @@ class HomeView: BaseVC {
         fetchPost()
         getCurrentName()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigation(isHidden: true)
+    }
 
     // MARK: - Configure View
     internal override func setupViews() {
@@ -88,7 +93,6 @@ extension HomeView: SkeletonTableViewDataSource {
         cell.setValue(titlePost: post?.title ?? "",
                       descPost: post?.body ?? "",
                       commentCount: commenntCount)
-        
         return cell
     }
     
@@ -116,5 +120,16 @@ extension HomeView: UITableViewDelegate {
         tableView.addLoading(indexPath) { [weak self] in
             self?.loadMorePost()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = homeViewModel.viewModelPost(index: indexPath.row)
+        toDetailPost(post)
+    }
+    
+    private func toDetailPost(_ post: PostViewModel?) {
+        let detailPostView = DetailPostView()
+        detailPostView.postId = post?.id ?? 0
+        self.navigationController?.pushViewController(detailPostView, animated: true)
     }
 }
