@@ -15,6 +15,8 @@ class BaseVC: UIViewController {
         return refreshControl
     }()
     
+    var isLoading = false
+    
     let progressView = BaseProgressView()
     
     override func viewDidLoad() {
