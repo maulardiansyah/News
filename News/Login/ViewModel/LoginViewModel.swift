@@ -21,6 +21,7 @@ class LoginViewModel {
             } else {
                 if let resData = data, let allUser = try? JSONDecoder().decode([User].self, from: resData) {
                     self?.allUser = allUser
+                    self?.checkAuthUser(username)
                 }
             }
         }
@@ -28,7 +29,7 @@ class LoginViewModel {
     
     private func checkAuthUser(_ username: String) {
         let userFilter = allUser.filter({ $0.username == username })
-        guard userFilter.count > 1 else {
+        guard userFilter.count > 0 else {
             showError?("Your username is invalid, try to check again.")
             return
         }

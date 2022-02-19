@@ -18,6 +18,7 @@ class HomeView: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPost()
+        getCurrentName()
     }
 
     // MARK: - Configure View
@@ -30,8 +31,17 @@ class HomeView: BaseVC {
         tablePostView.delegate = self
     }
     
+    public func scrollToTop() {
+        tablePostView.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: true)
+    }
+    
     // MARK: - Populate Data
+    private func getCurrentName() {
+        nameLabel.text = homeViewModel.getName()
+    }
+    
     private func fetchPost() {
+        view.showGradientSkeleton()
         homeViewModel.populatePost()
         homeViewModel.showError = { [weak self] errorMsg in
             self?.view.showToast(errorMsg)

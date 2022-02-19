@@ -23,6 +23,10 @@ class HomeViewModel {
         return postNews.count
     }
     
+    func getName() -> String {
+        return Defaults.getString(.name)
+    }
+    
     func viewModelPost(index: Int) -> PostViewModel? {
         guard index < postNews.count else { return nil }
         return PostViewModel(postNews[index])
@@ -45,12 +49,12 @@ class HomeViewModel {
         
         guard startIndex < allPostNews.count && currentIndexPagination < allPostNews.count else { return }
         let arraySlice = allPostNews[startIndex...currentIndexPagination]
+        print(arraySlice.count)
         postNews.append(contentsOf: arraySlice)
         
         for index in startIndex..<postNews.count {
             fetchComment(postId: postNews[index].id ?? 0)
         }
-        fetchedPost?()
     }
     
     private func fetchPost() {
@@ -60,7 +64,7 @@ class HomeViewModel {
             } else {
                 if let resData = data, let listPost = try? JSONDecoder().decode([Post].self, from: resData) {
                     self?.allPostNews = listPost
-                    let slicePost = listPost.prefix(self?.currentIndexPagination ?? 9)
+                    let slicePost = listPost[0...self!.currentIndexPagination]
                     self?.postNews.append(contentsOf: slicePost)
                     self?.populateComment()
                 }
@@ -72,7 +76,6 @@ class HomeViewModel {
         for postNews in postNews {
             fetchComment(postId: postNews.id ?? 0)
         }
-        fetchedPost?()
     }
     
     private func fetchComment(postId: Int) {
@@ -82,6 +85,9 @@ class HomeViewModel {
             } else {
                 if let resData = data, let listComment = try? JSONDecoder().decode([PostComment].self, from: resData) {
                     self?.postComment.append(listComment.count)
+                    let postComment = self?.postComment.count ?? 0
+                    guard postComment == self!.currentIndexPagination + 1 else { return }
+                    self?.fetchedPost?()
                 }
             }
         }

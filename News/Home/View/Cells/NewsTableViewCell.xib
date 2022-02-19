@@ -60,9 +60,9 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8c-Dz-3nh">
-                                <rect key="frame" x="12" y="81.5" width="35" height="75.5"/>
-                                <state key="normal" title="5" image="Comment">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8c-Dz-3nh">
+                                <rect key="frame" x="12" y="81.5" width="374" height="75.5"/>
+                                <state key="normal" title="0" image="Comment">
                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -72,7 +72,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G8c-Dz-3nh" secondAttribute="trailing" constant="12" id="7cf-0y-rHT"/>
+                            <constraint firstAttribute="trailing" secondItem="G8c-Dz-3nh" secondAttribute="trailing" constant="12" id="7cf-0y-rHT"/>
                             <constraint firstAttribute="bottom" secondItem="G8c-Dz-3nh" secondAttribute="bottom" constant="16" id="Izd-ey-1gs"/>
                             <constraint firstItem="9ff-nh-eWT" firstAttribute="leading" secondItem="Y1D-Sg-yfp" secondAttribute="leading" constant="12" id="LKL-SL-GsY"/>
                             <constraint firstAttribute="trailing" secondItem="9ff-nh-eWT" secondAttribute="trailing" constant="12" id="Rrm-E1-cmv"/>

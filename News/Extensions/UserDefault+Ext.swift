@@ -22,4 +22,12 @@ struct Defaults {
     static func saveInt(_ int: Int, key: KeyDefaults) {
         UserDefaults.standard.set(int, forKey: key.rawValue)
     }
+    
+    static func getInt(_ key: KeyDefaults) -> Int {
+        UserDefaults.standard.integer(forKey: key.rawValue)
+    }
+    
+    static func getString(_ key: KeyDefaults) -> String {
+        UserDefaults.standard.string(forKey: key.rawValue) ?? ""
+    }
 }

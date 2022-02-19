@@ -28,6 +28,7 @@ class LoginView: BaseVC {
             $0?.layer.borderColor = UIColor.blue.cgColor
         }
         buttonLogin.layer.cornerRadius = 8
+        view.backgroundColor = .bgSoftBlue
     }
     
     @IBAction func buttonLoginPressed(_ sender: Any) {
@@ -41,10 +42,13 @@ class LoginView: BaseVC {
         progressView.show(view: view)
         loginViewModel.fetchUser(usernameTemp)
         loginViewModel.showError = { [weak self] message in
+            self?.progressView.hide()
             self?.view.showToast(message)
         }
         loginViewModel.fetchedUser = { [weak self] in
             self?.progressView.hide()
+            Helper.checkLogin()
+            self?.dismiss(animated: true, completion: nil)
         }
     }
 }
