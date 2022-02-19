@@ -21,7 +21,8 @@ class MainTabbarController: UITabBarController {
         tabBar.barTintColor = .blue
         
         viewControllers = [
-            setTabbarItem(vc: HomeView(), img: .homeIcon, imgSelected: .homeIconSelected)
+            setTabbarItem(vc: HomeView(), title: "Home", img: .homeIcon, imgSelected: .homeIconSelected),
+            setTabbarItem(vc: ProfileView(), title: "Profile", img: .profileIcon, imgSelected: .profileIconSelected)
         ]
     }
     
@@ -32,11 +33,14 @@ class MainTabbarController: UITabBarController {
         navigationItem.title = " "
     }
     
-    private func setTabbarItem(vc: UIViewController, title: String = "", img: UIImage?, imgSelected: UIImage?) -> UIViewController {
+    private func setTabbarItem(vc: UIViewController, title: String, img: UIImage?, imgSelected: UIImage?) -> UIViewController {
         let nav = vc
-        nav.tabBarItem.title = nil
-        nav.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        nav.tabBarItem.title = title
+        nav.tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
         nav.tabBarItem.image = img?.withRenderingMode(.alwaysOriginal)
+        if #available(iOS 13.0, *) {
+            nav.tabBarItem.image?.withTintColor(.blue)
+        }
         nav.tabBarItem.selectedImage = imgSelected?.withRenderingMode(.alwaysOriginal)
         
         return nav

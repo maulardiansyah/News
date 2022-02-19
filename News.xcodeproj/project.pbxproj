@@ -40,6 +40,9 @@
 		D993DCA227C0D41F00350FE9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993DCA127C0D41F00350FE9 /* HomeViewModel.swift */; };
 		D993DCA427C0E13000350FE9 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993DCA327C0E13000350FE9 /* MainTabbarController.swift */; };
 		D993DCA627C0E9AC00350FE9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993DCA527C0E9AC00350FE9 /* Helper.swift */; };
+		D993DCAF27C0F86400350FE9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993DCAD27C0F86400350FE9 /* ProfileView.swift */; };
+		D993DCB027C0F86400350FE9 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D993DCAE27C0F86400350FE9 /* ProfileView.xib */; };
+		D993DCB327C0F97700350FE9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993DCB227C0F97700350FE9 /* ProfileViewModel.swift */; };
 		DEEE223AA032E0FADB4BC328 /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B76227134CB631AD329F01 /* Pods_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		D993DCA127C0D41F00350FE9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D993DCA327C0E13000350FE9 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		D993DCA527C0E9AC00350FE9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D993DCAD27C0F86400350FE9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D993DCAE27C0F86400350FE9 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		D993DCB227C0F97700350FE9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E7B76227134CB631AD329F01 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F8A9E58F91438AB41A8FC4 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +149,7 @@
 				D993DC5E27BE944400350FE9 /* Main */,
 				D993DC8527C07DEA00350FE9 /* Login */,
 				D993DC9327C08A0800350FE9 /* Home */,
+				D993DCA727C0F53700350FE9 /* Profile */,
 				D993DC4F27BE940700350FE9 /* Main.storyboard */,
 				D993DC5227BE940900350FE9 /* Assets.xcassets */,
 				D993DC5427BE940900350FE9 /* LaunchScreen.storyboard */,
@@ -308,6 +315,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D993DCA727C0F53700350FE9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D993DCAC27C0F56700350FE9 /* View */,
+				D993DCB127C0F94800350FE9 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D993DCAC27C0F56700350FE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D993DCAD27C0F86400350FE9 /* ProfileView.swift */,
+				D993DCAE27C0F86400350FE9 /* ProfileView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D993DCB127C0F94800350FE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D993DCB227C0F97700350FE9 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +404,7 @@
 				D993DC5627BE940900350FE9 /* LaunchScreen.storyboard in Resources */,
 				D993DC5327BE940900350FE9 /* Assets.xcassets in Resources */,
 				D993DC8A27C07E1800350FE9 /* LoginView.xib in Resources */,
+				D993DCB027C0F86400350FE9 /* ProfileView.xib in Resources */,
 				D993DC5127BE940700350FE9 /* Main.storyboard in Resources */,
 				D993DC9D27C08F0600350FE9 /* NewsTableViewCell.xib in Resources */,
 				D993DC9727C08A7E00350FE9 /* HomeView.xib in Resources */,
@@ -428,6 +462,7 @@
 			files = (
 				D993DC7727BE9DBE00350FE9 /* Network.swift in Sources */,
 				D993DC7527BE9DB600350FE9 /* ServicesMethod.swift in Sources */,
+				D993DCB327C0F97700350FE9 /* ProfileViewModel.swift in Sources */,
 				D993DC6927BE96AB00350FE9 /* BaseEmptyView.swift in Sources */,
 				D993DCA227C0D41F00350FE9 /* HomeViewModel.swift in Sources */,
 				D993DC4E27BE940700350FE9 /* MainController.swift in Sources */,
@@ -437,6 +472,7 @@
 				D993DC9627C08A7E00350FE9 /* HomeView.swift in Sources */,
 				D993DC6D27BE97C900350FE9 /* UITableView+Ext.swift in Sources */,
 				D993DC8427C0785D00350FE9 /* PostViewModel.swift in Sources */,
+				D993DCAF27C0F86400350FE9 /* ProfileView.swift in Sources */,
 				D993DC9C27C08F0600350FE9 /* NewsTableViewCell.swift in Sources */,
 				D993DC9F27C094D800350FE9 /* UIImage+Ext.swift in Sources */,
 				D993DC7A27BEA12400350FE9 /* User.swift in Sources */,
